@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<script src="calendario.js"></script>
+
+<title>Se busca cerebro perdido - Universidad Continental</title>
+</head>
+<button id="btnArriba" onclick="irArriba()" title="Ir arriba">↑</button>
+<body>
+    <!--Barra nav-->
+    <nav class="barranavegacion fixed">
+    <div class="logo">🧠 Bienestar UC</div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <div class="menu" id="menuNav">
+        <a href="#inicio" onclick="closeMenu()">Inicio</a>
+        <a href="#conocenos" onclick="closeMenu()">Conócenos</a>
+        <a href="#evento" onclick="closeMenu()">Eventos</a>
+        <a href="#contactanos" onclick="closeMenu()">Contáctanos</a>
+    </div>
+</nav>
+
+    <!--Encabezado-->
+    <header class="encabezado">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDQHPRUU3CIVfgGrARyKeH9e3et6NoWmPvcQ&s" alt="Logo Universidad Continental">
+        <h1>🔍 SE BUSCA: CEREBRO PERDIDO</h1>
+        <h2>Área de Bienestar Universitario</h2>
+    </header>
+
+    <main>
+        <!--Inicio -->
+        <section id="inicio" class="seccion">
+            <div class="estado-mental">
+                <h3>Estado Mental Promedio del Estudiante UC</h3>
+                <div class="medidor">
+                    <p><strong style="color: #fff" >Nivel de Estrés:</strong></p>
+                    <div class="barra-estres">
+                        <div class="nivel-estres">85% 😰</div>
+                    </div>
+                        <p style="color:#fff">¡Después del taller bajará a 30%! 🎉</p>
+                </div>
+            </div>
+            <div class="cerebro-container">
+                <img src="imagenes/060e7a18-eff5-43f1-b45b-e2404b0d1108.JPG" alt="Cerebro confundido" class="cerebro">
+            </div>  
+
+            <div class="info">
+                <strong>⚠️ ALERTA: Cerebro Extraviado ⚠️</strong><br><br>
+                Se extravió entre:<br>
+                📚 Parciales infinitos<br>
+                💻 Trabajos finales que nunca terminan<br>
+                ☕ Noches de café y desvelo<br>
+                😴 Siestas en la biblioteca<br><br>
+                <strong>Última vez visto:</strong> Semana de exámenes finales
+            </div>
+
+            <h3>Síntomas de Cerebro Perdido:</h3>
+            <div class="sintomas">
+                <div class="sintoma-card">
+                    <div class="sintoma-icon">🤯</div>
+                    <h4>Sobrecarga Mental</h4>
+                    <p>Tu cerebro tiene más pestañas abiertas que Chrome</p>
+                </div>
+                <div class="sintoma-card">
+                    <div class="sintoma-icon">😵</div>
+                    <h4>Confusión Crónica</h4>
+                    <p>¿Qué día es hoy? ¿En qué semana estamos?</p>
+                </div>
+                <div class="sintoma-card">
+                    <div class="sintoma-icon">🥱</div>
+                    <h4>Fatiga Extrema</h4>
+                    <p>El café ya no hace efecto</p>
+                </div>
+                <div class="sintoma-card">
+                    <div class="sintoma-icon">🫠</div>
+                    <h4>Creatividad en Vacaciones</h4>
+                    <p>Las ideas huyeron de vacaciones</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conócenos -->
+        <section id="conocenos" class="seccion clara">
+            <div class="banner">
+                <h2>"¡Rescata tu mente antes de que sea demasiado tarde!" 💡</h2>
+                <p style="color:#fff">Taller de Creatividad y Desconexión 🧠</p>
+            </div>
+            
+
+            <h3>🎁 ¿Qué ganarás al recuperar tu cerebro?</h3>
+            <div class="beneficios">
+                <div class="beneficio">
+                    <div class="beneficio-icon">🧘</div>
+                    <h4>Relajación</h4>
+                    <p>Desconexión total del estrés</p>
+                </div>
+                <div class="beneficio">
+                    <div class="beneficio-icon">🎨</div>
+                    <h4>Creatividad</h4>
+                    <p>Recupera tu chispa creativa</p>
+                </div>
+                <div class="beneficio">
+                    <div class="beneficio-icon">🤝</div>
+                    <h4>Conexión</h4>
+                    <p>Conoce gente increíble</p>
+                </div>
+                <div class="beneficio">
+                    <div class="beneficio-icon">🍕</div>
+                    <h4>Cofraternización</h4>
+                    <p>¡Comida y diversión!</p>
+                </div>
+            </div>
+
+            <h3>📸 Momentos de Desconexión:</h3>
+            <div class="galeria">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=60" alt="Equipo creativo">
+                <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=60" alt="Creatividad y trabajo en grupo">
+                <img src="https://www.residencias-estudiantes.com/storage/web_blogs_posts_galeria/62597e08588643de3e7b84f547d3ba0f.jpg" alt="Ambiente universitario">
+                <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=60" alt="Estudiantes felices">
+            </div>
+        </section>
+
+       <!-- Sección de Evento -->
+        <section id="evento" class="seccion">
+            <h2>📅 Próximos Eventos</h2>
+            <p>Revisa las fechas de nuestros talleres. <br> Los días marcados tienen eventos programados.</p>
+            
+            <div class="calendario-container">
+                <div class="calendario-header">
+                    <h3 id="calendarioMesAnio"></h3>
+                    <div class="calendario-nav-buttons">
+                        <button class="calendario-nav-btn" onclick="cambiarMes(-1)">← Anterior</button>
+                        <button class="calendario-nav-btn" onclick="cambiarMes(1)">Siguiente →</button>
+                    </div>
+                </div>
+                <div class="calendario-grid" id="calendarioGrid"></div>
+            </div>
+            <!-- Contador reggresivo-->
+            <div class="calendario-contador">
+                <h3>⏰ Tiempo restante para el próximo evento:</h3>
+                <div id="contadorEvento"></div>
+                
+            </div>
+            <!-- Modal para mostrar eventos -->
+            <div class="calendario-modal" id="calendarioModal">
+                <div class="calendario-modal-content">
+                    <button class="calendario-close-btn" onclick="cerrarModal()">×</button>
+                    <h2 class="calendario-modal-title" id="modalTitulo"></h2>
+                    <div id="modalEventosContenido"></div>
+                </div>
+            </div>
+        </section>
+        <!-- Contacto -->
+        <section id="contactanos" class="seccion clara">
+            <h2>📬 Inscríbete al Evento</h2>
+            <p>Reserva tu lugar para el taller de creatividad y desconexión</p>
+            
+            <form id="formInscripcion" class="formulario-inscripcion">
+                <div class="form-group">
+                    <input type="text" id="nombre" placeholder="Tu nombre completo" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Tu correo institucional" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="telefono" placeholder="Tu teléfono (opcional)">
+                </div>
+                <div class="form-group">
+                    <select id="carrera" required>
+                        <option value="">Selecciona tu carrera</option>
+                        <option value="ingenieria">Ingeniería</option>
+                        <option value="administracion">Administración</option>
+                        <option value="derecho">Derecho</option>
+                        <option value="medicina">Medicina</option>
+                        <option value="otra">Otra</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-inscripcion">🎯 ¡Quiero Inscribirme!</button>
+            </form>
+            
+            <div class="info contacto" style="margin-top: 40px;">
+                <strong>📬 Contáctanos:</strong><br><br>
+                📧 bienestar@continental.edu.pe<br>
+                📞 929 05 34 58<br><br>
+                <em>Tu salud mental también necesita receso 🧠💜</em>
+            </div>
+        </section>
+    </main>
+    <footer class="pie">
+        © 2025 Universidad Continental — Área de Bienestar Universitario<br>
+        <strong>¡Tu salud mental importa! 💜</strong>
+    </footer>
+</body>
+</html>

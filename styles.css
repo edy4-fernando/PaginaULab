@@ -1,0 +1,822 @@
+/* Variables principales */
+:root {
+    /* Colores principales */
+    --color-primary: #5A0FC8;
+    --color-primary-dark: #1A0033;
+    --color-primary-light: #7C3AED;
+    
+    /* Colores de fondo */
+    --color-white: #FFFFFF;
+    --color-bg-light: #FAFAFA;
+}
+h3 {
+    color: #5A0FC8;
+    margin: 40px 0 25px 0;
+    font-size: 1.6em;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Estilos globales */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(180deg, var(--color-primary-light) 0%, var(--color-bg-light) 100%);
+    color: #2C2C2C;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Barra de navegación */
+nav.barranavegacion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-primary-dark);
+    padding: 12px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+nav .logo {
+    color: var(--color-white);
+    font-weight: bold;
+    font-size: 1.1em;
+    padding-left: 20px;
+}
+
+nav .menu a {
+    color: var(--color-white);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+nav .menu a:hover {
+    color: var(--color-primary-light);
+    transform: scale(1.1);
+}
+
+/* Encabezado */
+header {
+    text-align: center;
+    color: var(--color-white);
+    background: var(--color-primary);
+    padding: 120px 20px 60px;
+    margin-top: 50px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+header img {
+    width: 120px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2em;
+    margin: 10px 0;
+}
+
+header h2 {
+    font-weight: 400;
+}
+
+/* ====== INICIO ===== */
+#inicio {
+    background-color: var(--color-white);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+
+
+.estado-mental {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    color: beige;
+    padding: 30px;
+    border-radius: 16px;
+    margin: 35px 0;
+    box-shadow: 0 10px 30px rgba(90, 15, 200, 0.35);
+    text-align: center;
+    align-items: center;
+}
+
+.estado-mental h3 {
+    color: var(--color-white);
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.medidor {
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+.medidor p {
+    color: var(--color-white);
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.barra-estres {
+    width: 100%;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nivel-estres {
+    height: 100%;
+    background: var(--color-white);
+    width: 85%;
+    border-radius: 15px;
+    animation: reducir-estres 3s ease-in-out infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--color-primary);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Animación */
+@keyframes reducir-estres {
+    0%, 100% { width: 85%; }
+    50% { width: 30%;}
+}
+
+
+/* 🧠 Imagen del cerebro */
+.cerebro-container {
+    position: relative;
+    display: inline-block;
+    margin: 35px 0;
+}
+.cerebro-container img {
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+    border: 5px solid var(--color-primary);
+    box-shadow: 0 8px 25px rgba(90, 15, 200, 0.3);
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.cerebro-container img:hover {
+    transform: rotate(10deg) scale(1.1);
+    box-shadow: 0 15px 45px rgba(90, 15, 200, 0.5);;
+}
+/*Info alerta*/
+.info {
+    font-size: 1.15em;
+    line-height: 1.9;
+    text-align: center;
+    margin: 35px 0;
+    padding: 30px;
+    background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent-lighter));
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(90, 15, 200, 0.15);
+    color: var(--color-text-gray);
+}
+.info strong {
+    color: var(--color-primary);
+    font-size: 1.15em;
+}
+
+/* 🧾 Secciones generales */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+section h3 {
+    color: var(--color-primary-dark);
+}
+
+/* 😵‍💫 Tarjetas de síntomas */
+.sintomas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.sintoma-card {
+    background-color: var(--color-bg-light);
+    border: 1px solid #D1C4E9;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(90, 15, 200, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.sintoma-card:hover {
+    transform: translateY(-5px);
+}
+
+.sintoma-icon {
+    font-size: 2em;
+}
+
+/* ===== CONOCENOS ===== */
+#conocenos {
+    background-color: var(--color-accent-lighter, #EDE7F6);
+    color: #2C2C2C;
+}
+/* Banner */
+.banner {
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 30px;
+    border-radius: 16px;
+    
+}
+.beneficios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+    margin-top: 35px 0; 
+}
+
+.beneficio {
+    background: var(--color-white);
+    color: #333;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(90, 15, 200, 0.1);
+    padding: 30px;
+    transition: all 0.3s ease;
+}
+.beneficio h4 {
+    color: #ffffff;
+    margin: 15px 0 10px 0;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+.beneficio p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #555;
+}
+.beneficio:hover {
+    transform: scale(1.05);
+}
+.beneficio-icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+/* 🖼️ Galería */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.galeria img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(90, 15, 200, 0.2);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    border: 3px solid var(--color-white);
+}
+
+.galeria img:hover {
+    transform: scale(1.05) rotate(1deg);
+    box-shadow: 0 15px 45px rgba(90, 15, 200, 0.4);
+    border-color: var(--color-primary);
+}
+/* ====== EVENTO ====== */
+.seccion h2 {
+    font-size: 30px;
+}
+.seccion p {
+    font-size: 1.2em;
+    color: #555;
+    max-width: 700px;
+    margin: 15px auto 40px auto;
+}
+/* estilosd el calendario */
+
+.calendario-container {
+    background: var(--color-white);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(90, 15, 200, 0.15);
+    padding: 30px;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.calendario-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--color-bg-light);
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.calendario-header h3 {
+    color: var(--color-primary);
+    font-size: 28px;
+    margin: 0;
+}
+
+.calendario-nav-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.calendario-nav-btn {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+    font-weight: 600;
+}
+
+.calendario-nav-btn:hover {
+    background: var(--color-primary-light);
+    transform: translateY(-2px);
+}
+
+.calendario-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.calendario-day-name {
+    text-align: center;
+    font-weight: bold;
+    color: var(--color-primary);
+    padding: 10px;
+    font-size: 14px;
+}
+
+.calendario-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: var(--color-white);
+    position: relative;
+    border-radius: 10px;
+    border: 1px solid #f0f0f0;
+}
+
+.calendario-day:hover {
+    background: var(--color-bg-light);
+    transform: scale(1.05);
+}
+
+.calendario-day-number {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    z-index: 1;
+}
+
+.calendario-day.other-month .calendario-day-number {
+    color: #ccc;
+}
+
+.calendario-day.today {
+    background: var(--color-primary-light);
+}
+
+.calendario-day.today .calendario-day-number {
+    color: var(--color-white);
+    font-weight: bold;
+}
+
+/* Día con evento  */
+.calendario-day.has-event::before {
+    content: '';
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    border: 3px solid var(--color-primary);
+    border-radius: 50%;
+    z-index: 0;
+    animation: calendario-pulso 2s ease-in-out infinite;
+}
+
+@keyframes calendario-pulso {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+}
+
+.calendario-day.has-event .calendario-day-number {
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+/* Contador regresivo */
+.calendario-contador {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    color: var(--color-white);
+    padding: 35px;
+    border-radius: 16px;
+    text-align: center;
+    margin: 40px auto;
+    max-width: 900px;
+    box-shadow: 0 10px 30px rgba(90, 15, 200, 0.35);
+    animation: glow-contador 2.5s infinite;
+}
+.calendario-contador h3 {
+    color: var(--color-white);
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+@keyframes glow-contador {
+    0%, 100% { 
+        box-shadow: 0 10px 30px rgba(90, 15, 200, 0.35); 
+    }
+    50% { 
+        box-shadow: 0 15px 45px rgba(90, 15, 200, 0.6); 
+    }
+}
+
+.calendario-contador h3 {
+    color: var(--color-white);
+    margin-bottom: 20px;
+    font-size: 1.4em;
+}
+
+#contadorEvento {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 20px 0;
+    color: var(--color-white);
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+}
+
+.evento-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.evento-info div {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 1em;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.evento-info div:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+/* Modal para mostrar evento */
+.calendario-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 0, 51, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendario-modal.active {
+    display: flex;
+}
+
+.calendario-modal-content {
+    background: var(--color-white);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: calendario-slideIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes calendario-slideIn {
+    from {
+        transform: translateY(-50px) scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.calendario-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    color: #999;
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: color 0.3s;
+}
+
+.calendario-close-btn:hover {
+    color: var(--color-primary);
+}
+
+/* Eventos dentro del modal  */
+.calendario-evento {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(135deg, #F3E5F5, #EDE7F6);
+    border-radius: 12px;
+    padding: 25px;
+    flex-wrap: wrap;
+    margin: 15px 0;
+    box-shadow: 0 8px 25px rgba(90, 15, 200, 0.15);
+    border: 2px solid #D1C4E9;
+    gap: 15px;
+}
+
+.calendario-evento-item {
+    margin: 8px;
+    font-size: 1.05em;
+    background: var(--color-white);
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(90, 15, 200, 0.15);
+    transition: all 0.3s ease;
+    color: #424242;
+    border: 2px solid transparent;
+    animation: evento-aparecer 0.5s ease-out backwards;
+}
+
+.calendario-evento-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.calendario-evento-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.calendario-evento-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes evento-aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.calendario-evento-item:hover {
+    transform: scale(1.08) translateY(-3px);
+    box-shadow: 0 10px 30px rgba(90, 15, 200, 0.3);
+    border-color: var(--color-primary);
+    background: linear-gradient(135deg, var(--color-white), #FAFAFA);
+}
+
+.calendario-evento-item strong {
+    color: var(--color-primary);
+}
+
+.calendario-evento p {
+    margin: 0;
+}
+
+.calendario-no-eventos {
+    text-align: center;
+    color: #999;
+    padding: 30px;
+    font-style: italic;
+}
+
+.calendario-modal-title {
+    color: var(--color-primary);
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .calendario-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .calendario-grid {
+        gap: 8px;
+    }
+    
+    .calendario-day-number {
+        font-size: 14px;
+    }
+    
+    .calendario-day.has-event::before {
+        width: 35px;
+        height: 35px;
+    }
+    
+    #contadorEvento {
+        font-size: 1.8em;
+    }
+    
+    .evento-info {
+        flex-direction: column;
+    }
+}
+/* ====== CONTATANOS ======*/
+.formulario-inscripcion {
+    max-width: 600px;
+    margin: 40px auto;
+    background: var(--color-white);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(90, 15, 200, 0.15);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(90, 15, 200, 0.1);
+}
+
+.btn-inscripcion {
+    width: 100%;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    color: var(--color-white);
+    padding: 18px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(90, 15, 200, 0.3);
+}
+
+.btn-inscripcion:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(90, 15, 200, 0.5);
+}
+
+.mensaje-exito {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+    animation: aparecer 0.5s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ==== Footer ==== */
+footer {
+    background: var(--color-primary-dark);
+    color: var(--color-white);
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 40px;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
+}
+/* nuevos estilos */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-white);
+    font-size: 1.8em;
+    cursor: pointer;
+    padding-right: 20px;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .menu {
+        position: fixed;
+        top: 60px;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background: var(--color-primary-dark);
+        flex-direction: column;
+        padding: 30px 0;
+        transition: right 0.3s ease;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+    }
+    
+    .menu.active {
+        right: 0;
+    }
+    
+    .menu a {
+        display: block;
+        padding: 15px 30px;
+        margin: 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+}
+/* Estilos botón ir arriba */
+#btnArriba {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5em;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(90, 15, 200, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+#btnArriba.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#btnArriba:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(90, 15, 200, 0.6);
+}
